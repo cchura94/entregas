@@ -1,11 +1,20 @@
-#!/usr/bin/env bash
+FROM richarvey/nginx-php-fpm:1.7.2
 
-php artisan config:cache
+COPY . .
 
-php artisan route:cache
+# Image config
+ENV SKIP_COMPOSER 1
+ENV WEBROOT /var/www/html/public
+ENV PHP_ERRORS_STDERR 1
+ENV RUN_SCRIPTS 1
+ENV REAL_IP_HEADER 1
 
-npm install
+# Laravel config
+ENV APP_ENV production
+ENV APP_DEBUG false
+ENV LOG_CHANNEL stderr
 
-npm run dev
+# Allow composer to run as root
+ENV COMPOSER_ALLOW_SUPERUSER 1
 
-php artisan migrate --seed
+CMD ["/start.sh"]
