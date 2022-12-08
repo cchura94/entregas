@@ -1,0 +1,20 @@
+
+Requerimientos de servidor
+
+1. instalar XAMPP
+    * php >= 7.2
+    * mysql o mariadb 
+
+2. instalar composer
+
+3. copiar y renombrar archivo (.env.example) a (.env)
+
+4. Actualizar dependencias del proyecto desde la terminal ejecutar
+    composer update
+5. generar una key
+    php artisan key:generate
+6. crear una base de datos "proy_entregas" en mysql y luego ejecutar
+    php artisan migrate:generate --seed
+7. Levantar el proyecto ejecutando:
+    php artisan serve
+
