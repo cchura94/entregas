@@ -10,8 +10,4 @@ echo "Caching routes..."
 php artisan route:cache
 
 echo "Running migrations..."
-npm install
-
-npm run dev
-
-php artisan migrate --seed
+php artisan migrate --force --seed
