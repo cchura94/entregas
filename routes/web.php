@@ -15,7 +15,7 @@ Route::get('/', function () {
     return redirect('/admin');
     //return view('welcome');
 });
-Route::get('admin', 'HomeController@index')->name('home');
+Route::get('admin', 'HomeController@index');//->name('home');
 
 Route::get('admin/tienda/{id}/sucursal', 'TiendaController@agregar_sucursal')->name('add_sucursal');
 Route::post('admin/tienda/{id}/sucursal', 'TiendaController@add_sucursal')->name('add_suc');
